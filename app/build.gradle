@@ -26,6 +26,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    // Added for Android 4.4.x support
+    compile 'com.mapbox.mapboxsdk:mapbox-android-services:2.2.9'
     compile('com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0@aar') {
         transitive = true
     }
