@@ -28,7 +28,7 @@ dependencies {
 
     // Added for Android 4.4.x support
     compile 'com.mapbox.mapboxsdk:mapbox-android-services:2.2.9'
-    compile('com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.0@aar') {
+    compile('com.mapbox.mapboxsdk:mapbox-android-sdk:5.2.1@aar') {
         transitive = true
     }
     compile 'com.android.support:appcompat-v7:27.0.0'
