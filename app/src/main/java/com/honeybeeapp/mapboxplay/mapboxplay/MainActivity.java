@@ -29,10 +29,17 @@ public class MainActivity extends AppCompatActivity {
         final SupportMapFragment mapFragment1 = new SupportMapFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.map_frame_layout, mapFragment1).commit();
 
+        final LatLng latLng = new LatLng(32, -18);
+
         mapFragment1.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 mMap = mapboxMap;
+
+                MarkerOptions customerMarker = new MarkerOptions();
+                customerMarker.position(latLng);
+                customerMarker.title("Hi!");
+                mMap.addMarker(customerMarker);
             }
         });
 
@@ -42,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (mMap != null) {
 
-                    final LatLng latLng = new LatLng(32, -18);
                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15), new MapboxMap.CancelableCallback() {
                         @Override
                         public void onCancel() {
@@ -55,14 +61,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
-                    MarkerOptions customerMarker = new MarkerOptions();
-                    customerMarker.position(latLng);
-                    customerMarker.title("Hi!");
-                    mMap.addMarker(customerMarker);
-
                 }
             }
         });
+
 
     }
 
